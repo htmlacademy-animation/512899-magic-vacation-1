@@ -1,10 +1,61 @@
 .social-block {
   position: relative;
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
     .social-block__list {
       opacity: 1;
       pointer-events: auto;
+    }
+
+    .social-block__toggler {
+      &::before {
+        background-color: $c-purple;
+        border: 2px solid $c-purple;
+      }
+
+      svg {
+        color: $c-light;
+      }
+    }
+
+    .social-block__toggler:hover {
+      &::before {
+        background-color: $c-light;
+        border: 2px solid $c-light;
+      }
+
+      svg {
+        color: $c-dark;
+      }
+    }
+
+    .social-block__toggler:focus {
+      &::before {
+        background-color: $c-light;
+        border: 2px solid $c-purple;
+      }
+
+      svg {
+        color: $c-dark;
+      }
+    }
+
+    .social-block__link {
+      opacity: 1;
+
+      &--fb {
+        transition: opacity 0.5s;
+      }
+
+      &--insta {
+        transition: opacity 1s;
+      }
+
+      &--vk {
+        transition: opacity 1.5s;
+      }
     }
   }
 }
@@ -51,6 +102,16 @@
     &::before {
       width: 112.5%;
       height: 112.5%;
+    }
+  }
+
+  &:hover {
+    svg {
+      color: $c-light;
+    }
+
+    &::before {
+      background-color: $c-purple;
     }
   }
 
@@ -168,6 +229,7 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  opacity: 0;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
