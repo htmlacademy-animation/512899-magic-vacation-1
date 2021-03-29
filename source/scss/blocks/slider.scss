@@ -38,8 +38,8 @@
 
   &:nth-child(even) {
     .slider__item-text {
+      opacity: 0;
       align-self: flex-end;
-      animation: 3s fadeInX ease 0.5s forwards;
 
       @media (max-width: $mobile) and (orientation: landscape) {
         align-self: flex-start;
@@ -50,14 +50,12 @@
   &:nth-child(odd) {
     .slider__item-text {
       opacity: 0;
-      animation: 2s fadeInX ease forwards;
     }
   }
 
   &:nth-child(2) {
     .slider__item-text {
       margin-top: 7.8rem;
-      opacity: 0;
 
       @media (min-width: $stop-scaling) {
         margin-top: 78px;
@@ -105,6 +103,14 @@
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
+
+  .swiper-slide-active & {
+    animation: 2s fadeInX ease forwards;
+  }
+
+  .swiper-slide-next & {
+    animation: 3s fadeInX ease 0.5s forwards;
+  }
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;

@@ -19,3 +19,19 @@
     transform: translateY(0);
   }
 }
+
+@keyframes animateInput {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: calc(100% - 21rem);
+    @media (min-width: $stop-scaling) {
+      width: calc(100% - 210px);
+    }
+    @media (orientation: portrait) {
+      width: calc(100% - 5rem);
+    }
+  }
+}

@@ -247,14 +247,14 @@
     &::after {
       content: "";
       position: absolute;
+      left: auto;
+      right: 0;
       bottom: 0;
+      display: block;
       width: 0;
       height: 2px;
       background-color: $c-light;
-      opacity: 0;
-      left: 100%;
-      transform: translateX(200%);
-      transition: 2s ease;
+      transition: width 0.4s;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -285,12 +285,10 @@
       outline: none;
 
       &::after {
-        opacity: 1;
-        background-color: $c-purple;
-        transform: none;
-        width: 100%;
-        transition: width 1s ease;
         left: 0;
+        right: auto;
+        width: 100%;
+        background-color: $c-purple;
       }
     }
   }
