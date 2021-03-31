@@ -49,9 +49,15 @@
   right: 0;
 
   .active & {
-    animation: animateInput 1s forwards linear;
     right: 0;
     left: auto;
+    width: calc(100% - 21rem);
+    @media (min-width: $stop-scaling) {
+      width: calc(100% - 210px);
+    }
+    @media (orientation: portrait) {
+      width: calc(100% - 5rem);
+    }
   }
 
   &:focus {
@@ -74,13 +80,13 @@
   }
 
   @media (max-width: $tablet) and (orientation: landscape) {
-    width: calc(100% - 9rem);
+    //width: calc(100% - 9rem);
   }
 
   @media (max-width: $mobile) and (orientation: landscape) {
     margin-right: 1rem;
     padding: 0 2.5rem;
-    width: calc(100% - 5rem);
+    //width: calc(100% - 5rem);
     height: 4rem;
     font-size: 1.6rem;
   }

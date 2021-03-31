@@ -1,14 +1,27 @@
 .social-block {
   position: relative;
 
-  &:hover,
-  &:focus,
-  &:active {
+  &:hover {
     .social-block__list {
       opacity: 1;
       pointer-events: auto;
-    }
 
+      .social-block__link {
+        opacity: 1;
+
+        &--fb {
+          transition: opacity 0.5s;
+        }
+
+        &--insta {
+          transition: opacity 1s;
+        }
+
+        &--vk {
+          transition: opacity 1.5s;
+        }
+      }
+    }
     .social-block__toggler {
       &::before {
         background-color: $c-purple;
@@ -19,7 +32,6 @@
         color: $c-light;
       }
     }
-
     .social-block__toggler:hover {
       &::before {
         background-color: $c-light;
@@ -28,33 +40,6 @@
 
       svg {
         color: $c-dark;
-      }
-    }
-
-    .social-block__toggler:focus {
-      &::before {
-        background-color: $c-light;
-        border: 2px solid $c-purple;
-      }
-
-      svg {
-        color: $c-dark;
-      }
-    }
-
-    .social-block__link {
-      opacity: 1;
-
-      &--fb {
-        transition: opacity 0.5s;
-      }
-
-      &--insta {
-        transition: opacity 1s;
-      }
-
-      &--vk {
-        transition: opacity 1.5s;
       }
     }
   }
@@ -100,8 +85,10 @@
     color: $c-purple;
 
     &::before {
-      width: 112.5%;
-      height: 112.5%;
+      //background-color: $c-purple;
+      //border: 2px solid $c-purple;
+      transition: transform 0.5s;
+      transform: translate(-50%, -50%) scale(1.125);
     }
   }
 
@@ -112,6 +99,7 @@
 
     &::before {
       background-color: $c-purple;
+      border-color: transparent;
     }
   }
 
@@ -126,6 +114,22 @@
     & + .social-block__list {
       opacity: 1;
       pointer-events: auto;
+
+      .social-block__link {
+        opacity: 1;
+
+        &--fb {
+          transition: opacity 0.5s;
+        }
+
+        &--insta {
+          transition: opacity 1s;
+        }
+
+        &--vk {
+          transition: opacity 1.5s;
+        }
+      }
     }
   }
 
