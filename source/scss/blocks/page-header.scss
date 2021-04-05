@@ -37,7 +37,7 @@
   color: $c-light;
   transform: translateX(-10%);
   opacity: 0;
-  transition: 0.4s all ease-out;
+  transition: 0.4s opacity ease-out, 0.4s transform ease-out;
 
   .load & {
     transform: translateX(0);
@@ -186,7 +186,7 @@
   line-height: 1.0418;
   color: $c-light;
   opacity: 0;
-  transition: 0.5s all 0.4s ease-out;
+  transition: 0.5s opacity 0.4s ease-out;
 
   .load & {
     opacity: 1;
