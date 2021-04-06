@@ -1002,19 +1002,6 @@ img {
   overflow: hidden;
 }
 
-@keyframes socialAnimationView {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  80% {
-    transform: scale(1.125);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 .animation-screen {
   position: fixed;
   display: flex;
@@ -1990,7 +1977,7 @@ img {
   color: #ffffff;
   transform: translateX(-10%);
   opacity: 0;
-  transition: 0.4s all ease-out;
+  transition: 0.4s opacity ease-out, 0.4s transform ease-out;
 }
 .page-header__logo:hover {
   opacity: 0.8;
@@ -2146,7 +2133,7 @@ img {
   line-height: 1.0418;
   color: #ffffff;
   opacity: 0;
-  transition: 0.5s all 0.4s ease-out;
+  transition: 0.5s opacity 0.4s ease-out;
 }
 .load .page-header__menu {
   opacity: 1;
@@ -3252,7 +3239,7 @@ img {
   z-index: 1;
   opacity: 0;
   transform: translateY(100%);
-  transition: all 0.4s ease-out;
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
 }
 .load .screen__footer {
   opacity: 1;
@@ -3961,14 +3948,15 @@ img {
   color: #5f458c;
   border-radius: 50%;
   opacity: 0;
-  transition: 0.4s opacity 0.5s ease-out;
+  transform: scale(0);
+  transition: 0.4s transform 0.5s cubic-bezier(0.17, 0.67, 0.85, 1.35), 0.4s opacity 0.5s ease-out;
 }
 .social-block__toggler:focus {
   outline: none;
 }
 .load .social-block__toggler {
-  animation: 0.4s 0.5s socialAnimationView;
   opacity: 1;
+  transform: scale(1);
 }
 @media (max-width: 1024px) and (orientation: portrait) {
   .social-block__toggler {
