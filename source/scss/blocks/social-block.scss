@@ -1,48 +1,5 @@
 .social-block {
   position: relative;
-
-  &:hover {
-    .social-block__list {
-      opacity: 1;
-      pointer-events: auto;
-
-      .social-block__link {
-        opacity: 1;
-
-        &--fb {
-          transition: opacity 0.5s;
-        }
-
-        &--insta {
-          transition: opacity 1s;
-        }
-
-        &--vk {
-          transition: opacity 1.5s;
-        }
-      }
-    }
-    .social-block__toggler {
-      &::before {
-        background-color: $c-purple;
-        border: 2px solid $c-purple;
-      }
-
-      svg {
-        color: $c-light;
-      }
-    }
-    .social-block__toggler:hover {
-      &::before {
-        background-color: $c-light;
-        border: 2px solid $c-light;
-      }
-
-      svg {
-        color: $c-dark;
-      }
-    }
-  }
 }
 
 .social-block__toggler {
@@ -69,8 +26,9 @@
     height: 100%;
     border-radius: 50%;
     background-color: $c-light;
-    border: 2px solid $c-light;
+    border: 2px solid currentColor;
     z-index: -1;
+    transition: transform 0.5s, background-color 0.3s;
   }
 
   svg {
@@ -78,38 +36,53 @@
     display: block;
     width: 2.3rem;
     height: 2.2rem;
+    transition: color 0.3s;
   }
 
-  &:hover,
   .social-block--active & {
-    color: $c-purple;
-
-    &::before {
-      //background-color: $c-purple;
-      //border: 2px solid $c-purple;
-      transition: transform 0.5s;
-      transform: translate(-50%, -50%) scale(1.125);
-    }
-  }
-
-  &:hover {
     svg {
       color: $c-light;
     }
 
     &::before {
       background-color: $c-purple;
-      border-color: transparent;
+    }
+
+    & + .social-block__list {
+      opacity: 1;
+      pointer-events: auto;
+
+      .social-block__link {
+        opacity: 1;
+
+        &--fb {
+          transition: opacity 0.5s;
+        }
+
+        &--insta {
+          transition: opacity 1s;
+        }
+
+        &--vk {
+          transition: opacity 1.5s;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    &::before {
+      background-color: $c-light;
+      transform: translate(-50%, -50%) scale(1.125);
+    }
+    svg {
+      color: currentColor;
     }
   }
 
   &:focus {
     color: $c-purple;
     outline: none;
-
-    &::before {
-      border-color: $c-purple;
-    }
 
     & + .social-block__list {
       opacity: 1;
