@@ -7,7 +7,9 @@ export default class FullPageScroll {
     this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
 
+    this.oldActiveScreen = -1;
     this.activeScreen = 0;
+    this.lastScreen = document.querySelector(`.screen-bg`);
     this.onScrollHandler = this.onScroll.bind(this);
     this.onUrlHashChengedHandler = this.onUrlHashChanged.bind(this);
   }
@@ -28,6 +30,7 @@ export default class FullPageScroll {
   }
 
   onUrlHashChanged() {
+    this.oldActiveScreen = this.activeScreen;
     const newIndex = Array.from(this.screenElements).findIndex((screen) => location.hash.slice(1) === screen.id);
     this.activeScreen = (newIndex < 0) ? 0 : newIndex;
     this.changePageDisplay();
@@ -40,17 +43,29 @@ export default class FullPageScroll {
   }
 
   changeVisibilityDisplay() {
-    this.screenElements.forEach((screen) => {
-      screen.classList.add(`screen--hidden`);
-      screen.classList.remove(`active`);
-    });
-    this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+    if (this.activeScreen === 2 && this.oldActiveScreen === 1) {
+      setTimeout(() => {
+        this.screenElements.forEach((screen) => {
+          screen.classList.add(`screen--hidden`);
+          screen.classList.remove(`active`);
+        });
+      }, 500);
+      this.lastScreen.classList.add(`active`);
+      setTimeout(() => {
+        this.lastScreen.classList.remove(`active`);
+      }, 500);
+    } else {
+      this.screenElements.forEach((screen) => {
+        screen.classList.add(`screen--hidden`);
+        screen.classList.remove(`active`);
+      });
+      this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+      clearTimeout(this.screenTimeOut);
 
-    clearTimeout(this.screenTimeOut);
-
-    this.screenTimeOut = setTimeout(() => {
-      this.screenElements[this.activeScreen].classList.add(`active`);
-    }, 100);
+      this.screenTimeOut = setTimeout(() => {
+        this.screenElements[this.activeScreen].classList.add(`active`);
+      }, 100);
+    }
   }
 
   changeActiveMenuItem() {
@@ -60,7 +75,6 @@ export default class FullPageScroll {
       activeItem.classList.add(`active`);
     }
   }
-
   emitChangeDisplayEvent() {
     const event = new CustomEvent(`screenChanged`, {
       detail: {

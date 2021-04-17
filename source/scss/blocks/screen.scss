@@ -5,6 +5,8 @@
   min-height: 100vh;
   z-index: 1;
   overflow: hidden;
+  background-color: $c-dark;
+  transition: visibility 0s 0s;
 
   &--hidden {
     display: none;
@@ -308,12 +310,47 @@
     background-position: top center, bottom center;
   }
 
+  //&.paused + .screen-bg {
+  //    transform: translateY(0);
+  //}
 
 }
+
+
 
 .screen--prizes {
   background-color: $c-dark;
 }
+
+//.screen--prizes {
+//  &.animation {
+//    background-color: transparent;
+//
+//    //&::after {
+//    //  position: absolute;
+//    //  inset: 0;
+//    //  background-color: $c-dark;
+//    //  transform: translateY(100%);
+//    //  transition: transform 1s cubic-bezier(0.38, 0.75, 0.55, 1);
+//    //  content: "";
+//    //}
+//    //
+//    //&.active {
+//    //  &::after {
+//    //    transform: translateY(0);
+//    //  }
+//    //
+//    //  & .screen__wrapper {
+//    //    opacity: 1;
+//    //    transition: opacity 0.3s 0.2s;
+//    //  }
+//    //}
+//    //
+//    //& .screen__wrapper {
+//    //  opacity: 0;
+//    //}
+//  }
+//}
 
 .screen--game {
   position: relative;
@@ -364,3 +401,25 @@
 .screen--rules {
   background-color: $c-dark;
 }
+
+.screen-bg {
+  width: 100%;
+  height: 0;
+  background-color: #5f458c;
+  position: absolute;
+  margin-top: auto;
+  z-index: 5;
+  left: 0;
+  bottom: 0;
+}
+
+.screen-bg.active {
+  height: 100%;
+  transition: height 0.4s linear, 0.4s z-index 0.5s;
+  z-index: -1;
+  //transition: transform 1s linear;
+}
+
+//.screen--story.finish + .screen-bg {
+//    transform: translateY(0);
+//}
