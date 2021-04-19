@@ -10473,6 +10473,8 @@ class FullPageScroll {
           screen.classList.add(`screen--hidden`);
           screen.classList.remove(`active`);
         });
+        this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+        this.screenElements[this.activeScreen].classList.add(`active`);
       }, 500);
       this.lastScreen.classList.add(`active`);
       setTimeout(() => {
