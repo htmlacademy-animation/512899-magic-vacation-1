@@ -3178,7 +3178,6 @@ img {
   min-height: 100vh;
   z-index: 1;
   overflow: hidden;
-  background-color: #5f458c;
   transition: visibility 0s 0s;
 }
 .screen--hidden {
