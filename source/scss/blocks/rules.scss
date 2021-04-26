@@ -201,7 +201,7 @@
 
   .active &:first-child {
     p {
-      transition: 0.2s transform 0.2s, 0.2s opacity 0.2s;
+      transition: 0.2s transform 0.2s ease, 0.2s opacity 0.2s ease;
     }
 
     &::before {
@@ -211,7 +211,7 @@
 
   .active &:nth-child(2) {
     p {
-      transition: 0.5s transform 0.2s, 0.5s opacity 0.2s;
+      transition: 0.5s transform 0.2s ease, 0.5s opacity 0.2s ease;
     }
     &::before {
       transition: 0.3s color 0.2s, 0.3s transform 0.3s $jump;
@@ -219,7 +219,7 @@
   }
   .active &:nth-child(3) {
     p {
-      transition: 0.7s transform 0.2s, 0.8s opacity 0.2s;
+      transition: 0.7s transform 0.2s ease, 0.8s opacity 0.2s ease;
     }
     &::before {
       transition: 0.5s color 0.2s, 0.6s transform 0.3s $jump;
@@ -227,7 +227,7 @@
   }
   .active &:last-child {
     p {
-      transition: 0.9s transform 0.2s, 1.2s opacity 0.2s;
+      transition: 0.9s transform 0.2s ease, 1.2s opacity 0.2s ease;
     }
 
     &::before {
