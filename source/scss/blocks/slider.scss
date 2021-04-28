@@ -101,13 +101,13 @@
   .active .swiper-slide-active & {
     transform: translateX(-20px);
     opacity: 1;
-    transition: all 0.75s;
+    transition: opacity 0.75s, transform 0.75s;
   }
 
   .active .swiper-slide-next & {
     transform: translateX(-10px);
     opacity: 1;
-    transition: 1s all 0.5s;
+    transition: opacity 0.5s ease 1s, transform 0.5s ease 1s;
   }
 
   @media (min-width: $stop-scaling) {
