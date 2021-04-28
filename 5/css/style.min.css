@@ -1866,7 +1866,7 @@ img {
   transform: translateY(20px);
 }
 .active .intro__message p {
-  transition: all 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
   opacity: 1;
   transform: translateY(0);
 }
@@ -3764,12 +3764,12 @@ img {
 .active .swiper-slide-active .slider__item-text {
   transform: translateX(-20px);
   opacity: 1;
-  transition: all 0.75s;
+  transition: opacity 0.75s, transform 0.75s;
 }
 .active .swiper-slide-next .slider__item-text {
   transform: translateX(-10px);
   opacity: 1;
-  transition: 1s all 0.5s;
+  transition: opacity 0.5s ease 1s, transform 0.5s ease 1s;
 }
 @media (min-width: 2000px) {
   .slider__item-text {
