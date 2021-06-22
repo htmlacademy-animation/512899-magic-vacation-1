@@ -1,0 +1,19 @@
+.show-text {
+  .intro__word {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 20px 0;
+    margin: -20px 0;
+  }
+
+  .intro__letter {
+    transform: translate3d(0, calc(12rem + 20px), 0);
+  }
+}
+
+.screen.active {
+  .intro__letter {
+    transform: translate3d(0, 0, 0);
+  }
+}

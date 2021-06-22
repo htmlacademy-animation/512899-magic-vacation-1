@@ -39,18 +39,9 @@
     right: -1rem;
   }
 
-  picture {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
   img {
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
   }
 }
 
@@ -268,3 +259,122 @@
     }
   }
 }
+
+.prize-images {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 80%;
+  max-width: 1000px;
+  transform: translateX(-50%);
+
+  @media (min-width: $tablet) {
+    width: 60%;
+  }
+
+  &__flamingo,
+  &__leaf-blue-1,
+  &__leaf-blue-2,
+  &__leaf-green,
+  &__leaf-suitcase {
+    position: absolute;
+
+  }
+
+  &__flamingo {
+    width: 28.5%;
+    left: 24%;
+    bottom: 18%;
+    z-index: 5;
+    animation-name: show-flamingo,flow-flamingo;
+    animation-duration: 800ms, 6s;
+    animation-delay: 0s, 800ms;
+    animation-fill-mode: backwards, both;
+    animation-direction: normal, alternate;
+    animation-iteration-count: 1, infinite;
+    animation-timing-function: ease, ease-in-out;
+    transform-origin: percentage( 790 / 1500 ) percentage(880 / 1500);
+    @media (max-width: $tablet) {
+      bottom: 24%;
+    }
+    @media (min-width: $tablet) {
+      width: 21.5%;
+      left: 34%;
+    }
+  }
+
+  &__leaf-blue-1 {
+    width: 31%;
+    left: 50%;
+    bottom: 28%;
+    animation-name:  show-blue-leaf-1;
+    animation-duration: 2s;
+    animation-delay: 600ms;
+    animation-fill-mode: both;
+    animation-direction: normal;
+    animation-timing-function:cubic-bezier(0.4, 0.54, 0.46, 1.58);
+    transform-origin: left percentage(180 / 260);
+    @media (max-width: $tablet) {
+      bottom: 34%;
+    }
+  }
+
+  &__leaf-blue-2 {
+    width: 30%;
+    left: 12%;
+    bottom: 18%;
+    animation-name:  show-blue-leaf-2;
+    animation-duration: 2s;
+    animation-delay: 600ms;
+    animation-fill-mode: both;
+    animation-direction: normal;
+    animation-timing-function: cubic-bezier(0.4, 0.54, 0.46, 1.58);
+    transform-origin: right percentage(97 / 240);
+    @media (max-width: $tablet) {
+      bottom: 24%;
+    }
+    @media (min-width: $tablet) {
+      left: 20%;
+    }
+  }
+
+  &__leaf-green {
+    width: 37%;
+    left: 46.2%;
+    bottom: 23.5%;
+    animation-name:  show-blue-leaf-1;
+    animation-duration: 2s;
+    animation-delay: 700ms;
+    animation-fill-mode: both;
+    animation-direction: normal;
+    animation-timing-function:cubic-bezier(0.4, 0.54, 0.46, 1.58);
+    transform-origin: left percentage(180 / 260);
+    @media (max-width: $tablet) {
+      bottom: 29.5%;
+    }
+  }
+
+  &__leaf-suitcase {
+    width: 40%;
+    left: 26%;
+    bottom: 15%;
+    animation-name: show-suitcase;
+    animation-duration: 800ms;
+    animation-fill-mode: backwards;
+    transform-origin: center bottom;
+    @media (max-width: $tablet) {
+      bottom: 21%;
+    }
+    @media (min-width: $tablet) {
+      width: 34%;
+      left: 32%;
+    }
+  }
+}
+
+
+
+
+
+
