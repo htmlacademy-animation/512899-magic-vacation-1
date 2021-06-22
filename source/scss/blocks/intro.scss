@@ -165,6 +165,7 @@
   font-size: 4.8rem;
   line-height: 0.906;
   letter-spacing: -0.04em;
+  display: flex;
 
   @media (min-width: $stop-scaling) {
     margin: 0 0 0 -5px;
